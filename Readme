@@ -54,5 +54,26 @@ bash
 npm run lint
 # or
 yarn lint
-These commands will help you manage and run your Vite React TypeScript project.
+
+
+Approach and Challenges
+Approach:
+
+To build a dynamic form generator, I employed a recursive approach using React. The DynamicForm component takes a JSON schema as input and renders form fields based on this schema. The schema supports various field types such as text inputs, select dropdowns, checkboxes, and nested sections. I utilized React hooks (useState) for managing form data and validation errors. The form submission is handled by validating all fields and then calling a callback function with the submitted data.
+
+Challenges:
+
+Recursive Rendering: Handling nested sections required careful implementation to ensure proper recursion. Although the schema is flat within sections, managing recursive calls for nested fields was a challenge.
+
+State Management: Managing state for dynamic fields was complex. Ensuring that each field's value and validation status were correctly updated in the state required careful handling of state updates.
+
+Validation: Implementing validation rules based on the schema was challenging, especially for different field types. Ensuring that validation messages were correctly displayed and updated was crucial.
+
+Styling: While basic styling was applied using inline styles, integrating a CSS framework like Tailwind CSS would be beneficial for more robust and responsive styling.
+
+Type Safety (in TypeScript version): Ensuring type safety by defining types for the schema and form data helped maintain code clarity but required careful type definitions to accommodate dynamic schema structures.
+
+Overall, the approach allowed for a flexible and reusable form component, but managing state and validation dynamically presented the most significant challenges.
+
+
 
